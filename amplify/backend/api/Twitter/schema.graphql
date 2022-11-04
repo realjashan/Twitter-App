@@ -1,0 +1,26 @@
+type LikeDb @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userdbIDs: ID! @index(name: "byUserDb")
+  tweetdbID: ID! @index(name: "byTweetDb")
+}
+
+type TweetDb @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String!
+  image: String
+  user: String
+  userdbID: ID! @index(name: "byUserDb")
+  LikeDbs: [LikeDb] @hasMany(indexName: "byTweetDb", fields: ["id"])
+}
+
+type UserDb @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String!
+  name: String!
+  email: String!
+  image: String
+  sub: String
+  TweetDbs: [TweetDb] @hasMany(indexName: "byUserDb", fields: ["id"])
+  LikeDbs: [LikeDb] @hasMany(indexName: "byUserDb", fields: ["id"])
+}
+ 

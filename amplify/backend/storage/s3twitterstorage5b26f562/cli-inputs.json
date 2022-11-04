@@ -1,0 +1,16 @@
+{
+  "resourceName": "s3twitterstorage5b26f562",
+  "bucketName": "twitter-storage-5b26f562",
+  "policyUUID": "61eaf0a5",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ]
+}

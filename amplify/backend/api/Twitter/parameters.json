@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "Twitter",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
